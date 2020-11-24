@@ -1,0 +1,8 @@
+Modo de empleo: app-producto [CODIGO_PRODUCTO] [NOMBRE_FUENTE_DATOS_CSV]...
+
+Cuando el CODIGO_PRODUCTO es '-', nano lee datos de la entrada estándar.
+Por defecto se utilizará un NOMBRE_FUENTE_DATOS_CSV con el valor "productos"
+
+Opción		Opción larga		Significado
+ -h             --help              Mostrar este texto de ayuda y salir
+ -l             --list              Listado de productos
