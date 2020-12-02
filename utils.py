@@ -3,13 +3,13 @@ import sys
 
 class utils:
     
-    def list(self,app):
-        app.list()
+    def list(self,app,products):
+        app.list(products)
 
-    def search(self,app):
-        app.search()
+    def search(self,app,products):
+        print(app.search(input("¿Cual es el codigo del producto?\n"), products))
 
-    def exit(self,app):
+    def exit(self,app,products):
         sys.exit()
 
     def switch_option(sellf,argument):

@@ -9,8 +9,7 @@ import random
 import sys
 
 class aplication:
-    
-    
+      
     def random_price(self,start, end):
         """
         This function will return a random datetime between two datetime
@@ -21,17 +20,13 @@ class aplication:
         random_second = randrange(int_delta)
         return start + timedelta(seconds=random_second)
 
-   
-
     def genPriceToProduct(self, productEntity):
         faker = Faker()
         price = random.random()*10
         name = productEntity['nombre']
         cod  = productEntity['cod']
         strLine = ""+str(cod)+";"+str(name)+";"+str(price)+"\n"
-        return strLine
-    
-    
+        return strLine  
 
     def saveDataInFile(self, fileName, products):
         file = open(fileName+".csv", 'w')
@@ -44,11 +39,17 @@ class aplication:
             file.write(productStr)
         file.close()
     
-    def list(self):
-        print("listado de productos")
+    def list(self, list):
+        print("Listado")
+        print("**************************")
+        print('cod'," | ",'nombre'," | ", 'precio')
+        for index, row in list.iterrows():
+            print(row['cod']," | ",row['nombre']," | ", row['precio'])
     
-    def search(self):
+    def search(self,search, products):
         print("Busqueda de un producto")
+        print("**************************")
+        return products.loc[products['cod'] == int(search)]
 
     def printMenu(self):
         print("**************************")
